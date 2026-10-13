@@ -126,5 +126,15 @@ const nav = [
       </div>
     </div>
   </footer>
+  <script is:inline>
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenu) {
+      document.addEventListener('click', (event) => {
+        if (mobileMenu.open && !mobileMenu.contains(event.target)) {
+          mobileMenu.removeAttribute('open');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
