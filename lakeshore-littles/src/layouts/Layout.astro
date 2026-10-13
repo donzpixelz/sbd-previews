@@ -47,7 +47,7 @@ const nav = [
     .nav-links{display:flex;justify-content:center;align-items:center;gap:52px}
     .nav-links a{font-size:17px;text-decoration:none;white-space:nowrap;padding:8px 0;border-bottom:1px solid transparent}
     .nav-links a:hover,.nav-links a.active{border-bottom-color:currentColor}
-    .mobile-nav{display:none}
+    .mobile-menu{display:none}
     main{min-height:300px}
     .page-width{width:min(1320px,calc(100% - 72px));margin:0 auto}
     .footer{background:var(--footer);min-height:510px;padding:84px 0 58px}
@@ -66,10 +66,20 @@ const nav = [
     .inert{cursor:default}
     @media(max-width:900px){
       .site-header{height:104px;min-height:104px}
-      .nav-shell{display:block;height:104px;padding:10px 18px}
+      .nav-shell{display:flex;height:104px;padding:10px 18px;align-items:center;justify-content:space-between}
       .nav-shell>div:last-child{display:none}
       .brand,.brand img{width:112px;height:84px}
-      .nav-links,.mobile-nav{display:none}
+      .nav-links{display:none}
+      .mobile-menu{display:block;position:relative}
+      .mobile-menu summary{list-style:none;cursor:pointer;width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(0,0,0,.22);border-radius:10px;background:rgba(255,255,255,.18)}
+      .mobile-menu summary::-webkit-details-marker{display:none}
+      .hamburger{width:22px;height:16px;display:flex;flex-direction:column;justify-content:space-between}
+      .hamburger span{height:2px;width:100%;background:#111;border-radius:2px}
+      .mobile-menu[open] summary{background:#fff}
+      .mobile-nav{position:absolute;right:0;top:58px;z-index:1000;min-width:230px;background:#fff;border:1px solid #d7d7d2;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.16);overflow:hidden}
+      .mobile-nav a{display:block;padding:15px 18px;text-decoration:none;font-size:15px;border-bottom:1px solid #ecebe7}
+      .mobile-nav a:last-child{border-bottom:0}
+      .mobile-nav a.active{background:var(--mist);font-weight:600}
       .page-width{width:calc(100% - 28px);max-width:760px}
       .footer{padding:50px 0}
       .footer-inner{width:calc(100% - 36px);max-width:760px;grid-template-columns:1fr;gap:34px;min-height:0}
@@ -87,9 +97,14 @@ const nav = [
       <nav class="nav-links" aria-label="Main navigation">
         {nav.map(([label,href]) => <a class={path===href || (href!==base && path.startsWith(href)) ? 'active' : ''} href={href}>{label}</a>)}
       </nav>
-      <nav class="mobile-nav" aria-label="Mobile navigation">
-        {nav.map(([label,href]) => <a href={href}>{label}</a>)}
-      </nav>
+      <details class="mobile-menu">
+        <summary aria-label="Open navigation menu">
+          <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
+        </summary>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          {nav.map(([label,href]) => <a class={path===href || (href!==base && path.startsWith(href)) ? 'active' : ''} href={href}>{label}</a>)}
+        </nav>
+      </details>
       <div></div>
     </div>
   </header>
