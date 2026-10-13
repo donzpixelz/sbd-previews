@@ -1,20 +1,51 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <Layout title="Grand Opening | Lakeshore Littles Play Café">
-<main class="event-detail page-width">
-  <h1>Grand Opening</h1>
-  <p class="meta">Sat, Jun 27 &nbsp; | &nbsp; Lakeshore Littles Play Café</p>
-  <p class="description">It's finally official! See you for our grand opening event on Saturday, June 27th! We will be offering discounts on monthly play packages, as well as a personality photographer, providing free personality photos of your kiddos, and a raffle drawing with prizes donated from our neighboring businesses</p>
-  <span class="ticket">Tickets are not on sale</span>
-  <hr/>
-  <h2>Time &amp; Location</h2>
-  <p>Jun 27, 2026, 10:00 AM – 2:00 PM</p>
-  <p>Lakeshore Littles Play Café, 1125 Washington Ave, Grand Haven, MI 49417, USA</p>
+<main>
+  <section class="event-top">
+    <div class="event-intro page-width">
+      <h1>Grand Opening</h1>
+      <p class="meta">Sat, Jun 27 &nbsp; | &nbsp; Lakeshore Littles Play Café</p>
+      <p class="description">It's finally official! See you for our grand opening event on Saturday, June 27th! We will be offering discounts on monthly play packages, as well as a personality photographer, providing free personality photos of your kiddos, and a raffle drawing with prizes donated from our neighboring businesses</p>
+      <span class="ticket">Tickets are not on sale</span>
+      <p><a class="other-events" href={base+'event-list/'}>See other events</a></p>
+      <img class="event-art" src={base+'assets/original/nsplsh_c5d4724b11b84e84b0714ff369fcfa13~mv2.jpg'} alt="Grand Opening event artwork" />
+    </div>
+  </section>
+
+  <section class="event-body page-width">
+    <h2>Time &amp; Location</h2>
+    <p>Jun 27, 2026, 10:00 AM – 2:00 PM</p>
+    <p>Lakeshore Littles Play Café, 1125 Washington Ave, Grand Haven, MI 49417, USA</p>
+
+    <div class="share">
+      <h2>Share this event</h2>
+      <div class="share-links" aria-label="Share this event"><span>f</span><span>𝕏</span><span>in</span></div>
+    </div>
+  </section>
 </main>
 <style>
-  .event-detail{max-width:900px;text-align:center;padding:86px 0 110px}.event-detail h1{font-size:62px;font-weight:400;margin:0 0 18px}.meta{color:#666}
-  .description{font-size:17px;line-height:1.65;margin:48px auto;max-width:760px}.ticket{display:inline-block;border:1px solid #aaa;padding:15px 30px;color:#777}
-  hr{border:0;border-top:1px solid #ddd;margin:70px 0}.event-detail h2{font-size:36px;font-weight:400}
+  .event-top{background:linear-gradient(to bottom,var(--mist) 0 70%,#fff 70% 100%);padding:72px 0 0;text-align:center}
+  .event-intro{max-width:1040px}
+  .event-intro h1{font-size:clamp(40px,4.4vw,62px);line-height:1.06;font-weight:400;margin:0 auto 18px}
+  .meta{font-size:14px;color:#777;margin:0}
+  .description{font-size:15px;line-height:1.55;margin:44px auto 32px;max-width:760px}
+  .ticket{display:inline-block;border:1px solid #aaa;padding:13px 30px;color:#777;font-size:13px}
+  .other-events{font-size:12px;color:#777}
+  .event-art{width:min(980px,100%);margin:52px auto 0;aspect-ratio:1.72/1;object-fit:cover}
+  .event-body{max-width:980px;padding:26px 0 120px;text-align:left}
+  .event-body h2{font-size:28px;font-weight:400;margin:28px 0 10px}
+  .event-body p{font-size:13px;line-height:1.55;color:#666;margin:6px 0}
+  .share{margin-top:180px}.share h2{font-size:20px}
+  .share-links{display:flex;gap:22px;font-size:13px}.share-links span{display:inline-block}
+  @media(max-width:900px){
+    .event-top{padding-top:52px;background:linear-gradient(to bottom,var(--mist) 0 74%,#fff 74% 100%)}
+    .event-intro h1{font-size:38px}.description{margin-top:30px}
+    .event-art{margin-top:38px;aspect-ratio:auto}
+    .event-body{padding-top:20px;padding-bottom:70px}.event-body h2{font-size:24px}
+    .share{margin-top:100px}
+  }
 </style>
 </Layout>
