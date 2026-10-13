@@ -65,13 +65,11 @@ const nav = [
     .btn.ghost{background:transparent;color:#6292b6}
     .inert{cursor:default}
     @media(max-width:900px){
-      .site-header{height:auto;min-height:104px}
-      .nav-shell{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:12px 16px}
+      .site-header{height:104px;min-height:104px}
+      .nav-shell{display:block;height:104px;padding:10px 18px}
       .nav-shell>div:last-child{display:none}
-      .brand,.brand img{width:68px;height:64px}
-      .nav-links{display:none}
-      .mobile-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 10px;max-width:none;width:100%;align-items:center}
-      .mobile-nav a{font-size:11px;text-decoration:none;text-align:center;white-space:normal;line-height:1.2}
+      .brand,.brand img{width:112px;height:84px}
+      .nav-links,.mobile-nav{display:none}
       .page-width{width:calc(100% - 28px);max-width:760px}
       .footer{padding:50px 0}
       .footer-inner{width:calc(100% - 36px);max-width:760px;grid-template-columns:1fr;gap:34px;min-height:0}
