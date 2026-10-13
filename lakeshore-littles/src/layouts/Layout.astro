@@ -1,8 +1,117 @@
 ---
 const { title = 'Lakeshore Littles Play Café' } = Astro.props;
-const base=import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL;
+const path = Astro.url.pathname;
+const nav = [
+  ['Home', base],
+  ['About Us', base + 'about-lakeshore-littles/'],
+  ["FAQ's", base + 'frequently-asked-questions/'],
+  ['Events', base + 'event-list/'],
+  ['Menus', base + 'menus/'],
+  ['Plans & Pricing', base + 'pricing-plans/plans-pricing/'],
+];
 ---
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow,noarchive"/><meta name="description" content="Unofficial preservation-first migration demonstration of the public Lakeshore Littles Play Café website."/><title>{title}</title><link rel="icon" href="data:,"/><style is:global>
-:root{font-family:Arial,Helvetica,sans-serif;color:#272727;background:#fff;font-synthesis:none}*{box-sizing:border-box}body{margin:0}a{color:inherit}a:focus-visible{outline:3px solid #2255bb;outline-offset:3px}.demo{font:600 11px/1.4 Arial,sans-serif;padding:9px 18px;text-align:center;background:#222;color:#fff;letter-spacing:.06em}.wrap{max-width:1080px;margin:auto;padding:0 28px}.nav{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{font-size:20px;letter-spacing:.02em;font-weight:700;text-decoration:none}.links{display:flex;align-items:center;flex-wrap:wrap;gap:25px}.links a{text-decoration:none;font-size:14px}.links a:hover{text-decoration:underline}.section{padding:80px 0}.section h1,.section h2{font-weight:500;line-height:1.2;margin:0 0 25px}.section h2{font-size:35px}p{line-height:1.8}.button{display:inline-block;padding:14px 27px;background:#242424;color:white;text-decoration:none;font-size:14px;transition:opacity .2s}.button:hover{opacity:.85}.footer{background:#f6f6f6;padding:46px 0;text-align:center;font-size:13px;line-height:1.9}.footer strong{font-size:17px}.footer a{display:inline-block}.footer .copy{font-size:12px}.footer address{font-style:normal}img{max-width:100%;height:auto} @media(max-width:700px){.wrap{padding:0 20px}.nav{padding:23px 0;display:block;min-height:0}.links{margin-top:20px;gap:18px}.section{padding:48px 0}.section h2{font-size:30px}}
-</style></head><body><div class="demo">INDEPENDENT SALES DEMONSTRATION — NOT THE OFFICIAL BUSINESS SITE · NO ORDERS OR BOOKINGS</div><header><div class="wrap nav"><a class="logo" href={base}>Lakeshore Littles Play Café</a><nav class="links" aria-label="Main navigation"><a href={base}>Home</a><a href={base+'menus/'}>Café Menu</a></nav></div></header><slot/><footer class="footer"><div class="wrap"><strong>Lakeshore Littles Play Café</strong><address>1125 Washington Ave, Grand Haven, MI 49417<br/><a href="mailto:lakeshorelittlesplaycafe@gmail.com">lakeshorelittlesplaycafe@gmail.com</a><br/><a href="tel:+16168436917">(616) 843-6917</a></address><p class="copy">© 2026 Lakeshore Littles Play Café. All rights reserved.</p><p class="copy">Unofficial demonstration. Payment and booking systems have not been migrated.</p></div></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="description" content="Lakeshore Littles Play Café migration preview." />
+  <title>{title}</title>
+  <link rel="icon" href="data:," />
+  <style is:global>
+    :root{
+      --blue:#8fb8d6;
+      --footer:#edf5fb;
+      --mist:#eef6fb;
+      --stone:#efefea;
+      --ink:#171717;
+      --muted:#66645c;
+      --line:#d9d8d1;
+      font-family:"Avenir Next",Avenir,"Helvetica Neue",Arial,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      font-synthesis:none;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;font-weight:400;overflow-x:hidden}
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    button,input{font:inherit}
+    .site-header{background:var(--blue);height:158px}
+    .nav-shell{height:100%;max-width:1340px;margin:0 auto;display:grid;grid-template-columns:190px 1fr 190px;align-items:center;padding:0 44px}
+    .brand{display:inline-flex;align-items:center;width:112px;height:96px;text-decoration:none}
+    .brand img{width:112px;height:90px;object-fit:contain}
+    .nav-links{display:flex;justify-content:center;align-items:center;gap:52px}
+    .nav-links a{font-size:17px;text-decoration:none;white-space:nowrap;padding:8px 0;border-bottom:1px solid transparent}
+    .nav-links a:hover,.nav-links a.active{border-bottom-color:currentColor}
+    .mobile-nav{display:none}
+    main{min-height:300px}
+    .page-width{width:min(1320px,calc(100% - 72px));margin:0 auto}
+    .footer{background:var(--footer);min-height:510px;padding:84px 0 58px}
+    .footer-inner{width:min(1320px,calc(100% - 72px));margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:end;min-height:350px}
+    .footer-logo{width:112px;height:112px;object-fit:contain;margin-bottom:24px}
+    .footer-name{font-size:23px;margin:0 0 26px}
+    .footer address{font-style:normal;font-size:14px;line-height:1.6}
+    .footer address a{text-decoration:none}
+    .copyright{font-size:12px;margin-top:62px;color:#555}
+    .socials{display:flex;gap:16px;justify-content:center;align-items:center;padding-bottom:60px}
+    .socials span{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700}
+    .socials .fb{background:#1877f2}.socials .ig{background:#ff2b7a}.socials .tt{background:#000}
+    .preview-note{text-align:right;align-self:end;padding-bottom:60px;font-size:11px;color:#6f7478}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-width:190px;padding:16px 30px;border-radius:32px;background:var(--blue);color:#fff;text-decoration:none;border:1px solid var(--blue);font-size:14px}
+    .btn.ghost{background:transparent;color:#6292b6}
+    .inert{cursor:default}
+    @media(max-width:900px){
+      .site-header{height:auto;min-height:104px}
+      .nav-shell{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:12px 16px}
+      .nav-shell>div:last-child{display:none}
+      .brand,.brand img{width:68px;height:64px}
+      .nav-links{display:none}
+      .mobile-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 10px;max-width:none;width:100%;align-items:center}
+      .mobile-nav a{font-size:11px;text-decoration:none;text-align:center;white-space:normal;line-height:1.2}
+      .page-width{width:calc(100% - 28px);max-width:760px}
+      .footer{padding:50px 0}
+      .footer-inner{width:calc(100% - 36px);max-width:760px;grid-template-columns:1fr;gap:34px;min-height:0}
+      .socials{justify-content:flex-start;padding:0}
+      .copyright{margin-top:34px}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href={base} aria-label="Lakeshore Littles Play Café home">
+        <img src={base+'assets/original/1cc917_df07512e66bf44ac86e449f73d9409af~mv2.png'} alt="Lakeshore Littles Play Café logo" />
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        {nav.map(([label,href]) => <a class={path===href || (href!==base && path.startsWith(href)) ? 'active' : ''} href={href}>{label}</a>)}
+      </nav>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        {nav.map(([label,href]) => <a href={href}>{label}</a>)}
+      </nav>
+      <div></div>
+    </div>
+  </header>
+  <slot />
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <img class="footer-logo" src={base+'assets/original/1cc917_ce8a3c18a8dc4d6687d47a5683230d08~mv2.png'} alt="Lakeshore Littles Play Café" />
+        <p class="footer-name">Lakeshore Littles Play Café</p>
+        <address>
+          1125 Washington Ave, Grand Haven, MI 49417<br/>
+          <a href="mailto:lakeshorelittlesplaycafe@gmail.com">lakeshorelittlesplaycafe@gmail.com</a><br/>
+          <a href="tel:+16168436917">(616) 843-6917</a>
+        </address>
+        <p class="copyright">© 2026 Lakeshore Littles Play Café. All rights reserved.</p>
+      </div>
+      <div class="socials" aria-label="Social links shown on the original site">
+        <span class="fb">f</span><span class="ig">◎</span><span class="tt">♪</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

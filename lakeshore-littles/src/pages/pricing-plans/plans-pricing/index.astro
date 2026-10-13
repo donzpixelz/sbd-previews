@@ -1,0 +1,33 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+const plans=[
+ ['Birthday Party','300',"Celebrate your child's special day with fun and joy",'Valid for one month',['Play area access for all guests','On site barista','2 hours party time plus 30 min set up + 30 min clean up']],
+ ['Single Play Session','10',"One-time access for your toddler's playtime",'Valid for one month',['Safe, supervised play area','Calm, inviting café environment','Flexible visit with no commitment']],
+ ['Punch Card','80','One-time purchase of 10 play sessions','Valid for 12 months',['Discounted session rate','Ideal for frequent visitors','Can be used for multiple children']],
+ ['Single Child Monthly Play Package','50','Unlimited toddler play for one month','Valid for one month',['Unlimited playtime']],
+ ['Two Children Monthly Play Package','70','Unlimited toddler play with one month access','Valid for one month',['Unlimited playtime']],
+ ['Family Monthly Play Package','90','Unlimited family play with one month access','Valid for one month',['Unlimited playtime']],
+];
+---
+<Layout title="Plans & Pricing | Lakeshore Littles Play Café">
+<main class="pricing page-width">
+  <h1>Choose your pricing plan</h1>
+  <div class="pricing-grid">
+    {plans.map(([name,price,desc,valid,features])=><article>
+      <div class="plan-top"><h2>{name}</h2><div class="price"><small>$</small><strong>{price}</strong></div><p>{desc}</p><p class="valid">{valid}</p><span class="buy">Buy Now</span></div>
+      <div class="features">{features.map(f=><p>{f}</p>)}</div>
+    </article>)}
+  </div>
+</main>
+<style>
+  .pricing{padding:65px 0 34px}.pricing h1{text-align:center;font-size:52px;font-weight:400;color:#77735d;margin:0 0 60px}
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 28px;max-width:1080px;margin:0 auto}
+  article{border:1px solid #d3d2cb;text-align:center;display:flex;flex-direction:column;min-height:510px}
+  .plan-top{padding:36px 30px 28px;flex:1}.plan-top h2{font-size:17px;font-weight:400;margin:0;min-height:46px;color:#6e6b61}
+  .price{display:flex;align-items:flex-start;justify-content:center;color:#77735d;margin:6px 0 12px}.price small{font-size:15px;margin:4px 4px 0 0}.price strong{font-size:72px;font-weight:300;line-height:1}
+  .plan-top>p{font-size:12px;line-height:1.45;color:#777;margin:15px auto;max-width:230px}.valid{font-size:11px!important}
+  .buy{display:block;background:var(--blue);color:#fff;padding:13px;margin-top:20px;font-size:12px}
+  .features{border-top:1px solid #d3d2cb;padding:24px 16px;min-height:145px}.features p{font-size:12px;margin:12px 0;color:#666}
+  @media(max-width:900px){.pricing h1{font-size:38px}.pricing-grid{grid-template-columns:1fr}.pricing{padding-top:40px}article{min-height:0}}
+</style>
+</Layout>

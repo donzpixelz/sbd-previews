@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base=import.meta.env.BASE_URL;
+const cards=[
+  ['Open Play Sessions','Drop in for child-led exploration in our safe, curated play areas. It’s a space designed for imagination, where kids lead the way and you finally get to catch your breath.','1cc917_be9029f978f544cbbb8aea5704fa5849~mv2.jpg'],
+  ['Flexible Memberships','For our frequent flyers, our memberships make visiting easy and affordable. Join a community that understands the day-to-day and find a consistent haven for your routine. (Coming soon!)','1cc917_273775e874424d719dd2b23f07c2204c~mv2.jpg'],
+  ['Events & Pop-Ups','From seasonal celebrations to small-group gatherings, our special events are all about creating extra magic and helping local families truly connect. You can even host your own events, such as private play dates or parties!','1cc917_f8403d7cdef64004ad6486470658cb52~mv2.jpg'],
+  ['The Parent Café','Enjoy coffee that’s actually hot and snacks that both you and the kids will love. Stay close to the action while taking a much-deserved break in our family-friendly cafe area.','1cc917_0a8436dfe31f40ca911e5d9ebf09ed28~mv2.jpg'],
+];
+---
+<Layout title="About Us | Lakeshore Littles Play Café">
+<main>
+  <section class="about-intro">
+    <div class="page-width intro-grid">
+      <p>Hi there, we're Mariah and Chelsi. As cousins and stay-at-home moms raising four wild boys together, we found ourselves craving a place where we could actually breathe and connect. We dreamed of a cozy spot where our kids could play safely while we shared the real ups and downs of motherhood with friends who truly get it. Thanks to a little push from Mariah’s dad, Mike, we took a huge leap of faith to build this haven. It’s been a crazy journey, but we are so happy to be here with you.</p>
+      <img src={base+'assets/original/1cc917_3edbb754e53948fca438f81076928bb5~mv2.jpeg'} alt="Mariah and Chelsi" />
+    </div>
+  </section>
+
+  <section class="heart">
+    <div class="heart-copy">
+      <h1>The Heart Behind the Play</h1>
+      <p>We believe childhood should feel like a deep breath. At Lakeshore Littles, we’ve created a calm, welcoming space where 'open-ended play' isn’t just a buzzword—it’s an invitation. Toys here don't tell kids what to do; they spark the imagination, allowing little ones to lead the way while you find a moment of peace and real connection.</p>
+      <p>This is a haven for the authentic ups and downs of parenthood. Whether it's the bond between you and your child or the sanity-saving chat with a fellow seeker of community who truly 'gets' the chaos, we lean into the beauty of the village. Every kind of family is met here with kindness, warmth, and respect.</p>
+      <p>We know caregiving is raw, wonderful, and sometimes a little heavy. Our philosophy is simple: come exactly as you are, stay as long as you need, and let’s navigate these precious, wild years together in a space built intentionally for you and your littles.</p>
+    </div>
+  </section>
+
+  <section class="offers page-width">
+    <h2>What We Offer Your Family</h2>
+    <p class="offers-lede">We've built this space with one goal: to let you exhale while your littles play. Whether you're here for a quick morning session or a long afternoon chat, you’re part of our village.</p>
+    <div class="card-grid">
+      {cards.map(([name,copy,img]) => <article><img src={base+'assets/original/'+img} alt="" /><h3>{name}</h3><p>{copy}</p></article>)}
+    </div>
+  </section>
+
+  <section class="village">
+    <div class="page-width village-grid">
+      <div><h2>Our Heart for the<br/>Village</h2>
+      <p>We know that parenting is a beautiful, wild, and sometimes exhausting journey. At Lakeshore Littles, we didn’t just want to build a play space; we wanted to create a sanctuary where caregivers can finally take a deep breath. It’s a place to exhale while your little ones explore safe, inclusive, and imaginative environments designed intentionally for discovery and delight.</p>
+      <p>Beyond the play, our mission is connection. Whether we’re hosting events that bring families together or partnering with local resources that support our community, we are dedicated to building a village where everyone feels seen. Come as you are, share the real-life magic (and mess) of these years, and find a place where you truly belong.</p></div>
+      <img src={base+'assets/original/1cc917_58f3ec938cde4b2f935c06a6057c787f~mv2.jpg'} alt="" />
+    </div>
+  </section>
+</main>
+<style>
+  .about-intro{background:var(--mist);padding:48px 0}
+  .intro-grid{display:grid;grid-template-columns:1.5fr .65fr;gap:120px;align-items:center}
+  .intro-grid>p{font-size:24px;line-height:1.5;margin:0}
+  .intro-grid img{width:100%;height:565px;object-fit:cover}
+  .heart{background:var(--stone);padding:105px 0 115px;text-align:center}
+  .heart-copy{width:min(860px,calc(100% - 50px));margin:auto}.heart h1,.offers h2,.village h2{font-size:58px;line-height:1.08;font-weight:400;margin:0 0 45px}
+  .heart p{font-size:16px;line-height:1.6;margin:28px 0}
+  .offers{padding:92px 0 102px;text-align:center}.offers h2{margin-bottom:20px}.offers-lede{max-width:680px;margin:0 auto 65px;line-height:1.45;font-size:16px}
+  .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px 56px;text-align:left}
+  .card-grid img{width:100%;aspect-ratio:1.72/1;object-fit:cover;border-radius:15px}
+  .card-grid h3{font-size:25px;font-weight:400;margin:22px 0 10px}.card-grid p{font-size:14px;line-height:1.45;margin:0}
+  .village{background:#bcd8ec;padding:100px 0}.village-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:110px;align-items:center}
+  .village h2{margin-bottom:42px}.village p{font-size:16px;line-height:1.55}.village img{width:100%;max-height:560px;object-fit:cover;border-radius:28px}
+  @media(max-width:900px){
+    .intro-grid,.village-grid,.card-grid{grid-template-columns:1fr;gap:30px}.intro-grid>p{font-size:18px}.intro-grid img{height:auto;max-height:520px}
+    .heart{padding:64px 0}.heart h1,.offers h2,.village h2{font-size:40px}.offers{padding:60px 0}.village{padding:60px 0}
+  }
+</style>
+</Layout>

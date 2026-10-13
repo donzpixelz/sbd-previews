@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const faqs=[
+ ["Are there any special events or classes hosted at the café?","Yes, once we have established a routine, we plan to partner with other local businesses to provide fun events, as well as providing some of our own themed events. Check our events calendar for upcoming activities."],
+ ["What are the operating hours of Lakeshore Littles Play Café?","Lakeshore Littles Play Café is open from 9AM-2PM. Our hours are subject to change based on owners schedules. Please check our website or contact us for holiday hours."],
+ ["Does the café offer food and drinks?","Yes, our café offers a selection of family-friendly food and drinks."],
+ ["What activities are available during open play sessions?","During open play sessions, children can enjoy a variety of activities including a large play structure, building blocks and themed toy rotations Our play area is designed to be safe and engaging for kids aged 0-6, with a specific area for children who are not walking yet!"],
+ ["How can I become a member of Lakeshore Littles Play Café?","You can become a member by visiting us in person. Memberships come with exclusive benefits and will be available for purchase soon!"],
+ ["What safety measures are in place at the play café?","We prioritize safety with measures such as constant cleaning and ensuring safety standards are met for all toys and play equiptment. Our staff is trained to ensure a secure environment for all visitors."],
+ ["What is the age range for children allowed in the play area?","Our play area is designed for children aged 0-6. We ensure a safe and engaging environment for all. Our tiniest members have an area of their own to ensure they are safe from the bigger children trampling over them."],
+ ["Can I bring outside food or drinks?","We kindly ask that outside food and drinks are not brought into the café. However, exceptions can be made for dietary restrictions or allergies."],
+ ["Do you offer private party bookings?","Yes, we offer private party bookings for special occasions. Contact us to learn more about our packages and availability."],
+];
+---
+<Layout title="FAQ's | Lakeshore Littles Play Café">
+<main class="faq page-width">
+  <div class="faq-head"><h1>Frequently asked questions</h1><div class="search">Looking for something? <span>⌕</span></div></div>
+  <div class="tab">General</div>
+  <div class="faq-list">
+    {faqs.map(([q,a]) => <details><summary>{q}<span>⌄</span></summary><p>{a}</p></details>)}
+  </div>
+</main>
+<style>
+  .faq{padding:42px 0 46px}.faq-head{display:flex;justify-content:space-between;align-items:center;gap:20px}.faq h1{font-size:32px;font-weight:400;margin:0}.search{font-size:12px;color:#777}
+  .tab{font-size:12px;color:#7aa7c7;border-bottom:2px solid var(--blue);width:104px;padding:42px 36px 12px 36px;margin-left:-36px}
+  .faq-list{padding-top:24px}.faq-list details{border:1px solid #aaa99f;border-bottom:0}.faq-list details:last-child{border-bottom:1px solid #aaa99f}
+  summary{list-style:none;padding:23px 26px;display:flex;justify-content:space-between;cursor:pointer;font-size:15px;color:#555}summary::-webkit-details-marker{display:none}
+  details p{padding:0 26px 24px;margin:0;max-width:1000px;line-height:1.55;color:#4c4c4c}
+  @media(max-width:700px){.faq{padding-top:30px}.faq-head{display:block}.search{margin-top:16px}.faq h1{font-size:27px}.tab{margin-left:0;padding-left:0}}
+</style>
+</Layout>

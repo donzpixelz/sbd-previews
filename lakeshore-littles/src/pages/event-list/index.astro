@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base=import.meta.env.BASE_URL;
+const events=[
+ {title:"Coffee and complaining - mom’s night out!",date:"Fri, Sep 18",where:"1125 Washington Ave",img:"1cc917_3b56850792584107978ded52bdb68c1e~mv2.jpg",href:base+"event-details/coffee-and-complaining-moms-night-out/"},
+ {title:"Grand Opening",date:"Sat, Jun 27",where:"Lakeshore Littles Play Café",img:"nsplsh_c5d4724b11b84e84b0714ff369fcfa13~mv2.jpg",href:base+"event-details/grand-opening/"}
+];
+---
+<Layout title="Events | Lakeshore Littles Play Café">
+<main class="events page-width">
+  <h1>Our Events</h1>
+  <div class="events-grid">
+    {events.map(e=><a class="event-card" href={e.href}><img src={base+'assets/original/'+e.img} alt={e.title}/><h2>{e.title}</h2><p>{e.date} &nbsp; | &nbsp; {e.where}</p><span>More info</span></a>)}
+  </div>
+</main>
+<style>
+  .events{padding:76px 0 0}.events h1{text-align:center;font-size:70px;font-weight:400;margin:0 0 22px}
+  .events-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .event-card{text-decoration:none;border:1px solid #e3e3df;text-align:center;padding-bottom:26px}
+  .event-card img{width:100%;height:670px;object-fit:cover}.event-card h2{font-size:24px;font-weight:400;margin:28px 20px 8px}.event-card p{font-size:12px;color:#777;margin:0 10px 18px}.event-card span{font-size:13px;text-decoration:underline}
+  @media(max-width:900px){.events{padding-top:42px}.events h1{font-size:46px}.events-grid{grid-template-columns:1fr}.event-card img{height:auto;aspect-ratio:1/1;object-fit:cover}}
+</style>
+</Layout>
