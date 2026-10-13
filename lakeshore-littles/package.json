@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && cp dist/lakeshore-littles/_headers dist/_headers && cp dist/lakeshore-littles/robots.txt dist/robots.txt",
     "preview": "astro preview"
   },
   "dependencies": {
