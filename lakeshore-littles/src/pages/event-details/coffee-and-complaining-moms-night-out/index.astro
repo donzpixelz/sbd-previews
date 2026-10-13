@@ -1,23 +1,58 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <Layout title="Coffee and complaining - mom’s night out! | Lakeshore Littles Play Café">
-<main class="event-detail page-width">
-  <h1>Coffee and complaining - mom’s night out!</h1>
-  <p class="meta">Fri, Sep 18 &nbsp; | &nbsp; 1125 Washington Ave</p>
-  <p class="description">Join us to sip and complain! Your ticket includes a craft of your choice (jewelry dish or wine glass), a drink, and conversations with other moms who just get it! We will also have a permanent jewelry booth where you can purchase some jewelry!</p>
-  <span class="ticket">Get tickets!!</span>
-  <p class="not-sale">Tickets are not on sale</p>
-  <hr/>
-  <h2>Time &amp; Location</h2>
-  <p>Sep 18, 2026, 7:00 PM</p>
-  <p>1125 Washington Ave, 1125 Washington Ave, Grand Haven, MI 49417, USA</p>
-  <h2>About the event</h2>
-  <p>Join us! Secure your spot and let us know which craft you want -</p>
+<main>
+  <section class="event-top">
+    <div class="event-intro page-width">
+      <h1>Coffee and complaining - mom’s night out!</h1>
+      <p class="meta">Fri, Sep 18 &nbsp; | &nbsp; 1125 Washington Ave</p>
+      <p class="description">Join us to sip and complain! Your ticket includes a craft of your choice (jewelry dish or wine glass), a drink, and conversations with other moms who just get it! We will also have a permanent jewelry booth where you can purchase some jewelry!</p>
+      <a class="ticket primary" href="https://square.link/u/Yk0fMwIK?src=sheet" target="_blank" rel="noreferrer">Get tickets!!</a>
+      <p class="not-sale">Tickets are not on sale</p>
+      <a class="other-events" href={base+'event-list/'}>See other events</a>
+      <img class="event-art" src={base+'assets/original/1cc917_3b56850792584107978ded52bdb68c1e~mv2.jpg'} alt="Coffee and Complaining moms night out event artwork" />
+    </div>
+  </section>
+
+  <section class="event-body page-width">
+    <h2>Time &amp; Location</h2>
+    <p>Sep 18, 2026, 7:00 PM</p>
+    <p>1125 Washington Ave, 1125 Washington Ave, Grand Haven, MI 49417, USA</p>
+
+    <h2>About the event</h2>
+    <p>Join us! Secure your spot and let us know which craft you want - <a href="https://square.link/u/Yk0fMwIK?src=sheet" target="_blank" rel="noreferrer">https://square.link/u/Yk0fMwIK?src=sheet</a></p>
+
+    <div class="share">
+      <h2>Share this event</h2>
+      <div class="share-links" aria-label="Share this event"><span>f</span><span>𝕏</span><span>in</span></div>
+    </div>
+  </section>
 </main>
 <style>
-  .event-detail{max-width:900px;text-align:center;padding:86px 0 110px}.event-detail h1{font-size:54px;font-weight:400;margin:0 0 18px}.meta{color:#666}
-  .description{font-size:17px;line-height:1.65;margin:48px auto 26px;max-width:760px}.ticket{display:inline-block;background:var(--blue);color:#fff;padding:15px 32px;border-radius:2px}
-  .not-sale{font-size:13px;color:#777}.event-detail hr{border:0;border-top:1px solid #ddd;margin:70px 0}.event-detail h2{font-size:36px;font-weight:400;margin-top:42px}
+  .event-top{background:linear-gradient(to bottom,var(--mist) 0 70%,#fff 70% 100%);padding:72px 0 0;text-align:center}
+  .event-intro{max-width:1040px}
+  .event-intro h1{font-size:clamp(40px,4.4vw,62px);line-height:1.06;font-weight:400;margin:0 auto 18px;max-width:900px}
+  .meta{font-size:14px;color:#777;margin:0}
+  .description{font-size:15px;line-height:1.55;margin:44px auto 22px;max-width:760px}
+  .ticket{display:inline-block;text-decoration:none;padding:13px 31px;font-size:13px}
+  .ticket.primary{background:var(--blue);color:#fff}
+  .not-sale{font-size:12px;color:#777;margin:15px 0 2px}
+  .other-events{font-size:12px;color:#777}
+  .event-art{width:min(980px,100%);margin:52px auto 0;aspect-ratio:1.72/1;object-fit:cover}
+  .event-body{max-width:980px;padding:26px 0 120px;text-align:left}
+  .event-body h2{font-size:28px;font-weight:400;margin:28px 0 10px}
+  .event-body p{font-size:13px;line-height:1.55;color:#666;margin:6px 0}
+  .event-body a{color:#6f9fbe}
+  .share{margin-top:130px}.share h2{font-size:20px}
+  .share-links{display:flex;gap:22px;font-size:13px}.share-links span{display:inline-block}
+  @media(max-width:900px){
+    .event-top{padding-top:52px;background:linear-gradient(to bottom,var(--mist) 0 74%,#fff 74% 100%)}
+    .event-intro h1{font-size:36px}.description{margin-top:30px}
+    .event-art{margin-top:38px;aspect-ratio:auto}
+    .event-body{padding-top:20px;padding-bottom:70px}.event-body h2{font-size:24px}
+    .share{margin-top:80px}
+  }
 </style>
 </Layout>
