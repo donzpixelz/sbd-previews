@@ -3,7 +3,7 @@ const services = [
   {
     kicker: 'Install',
     title: 'Fixtures, fans & residential upgrades',
-    copy: 'Krall’s current site highlights installation work ranging from ceiling fans to updated light fixtures, with professional attention for both straightforward and more involved residential projects.',
+    copy: 'From ceiling fans to updated light fixtures, Krall handles residential installation work with professional attention for both straightforward and more involved projects.',
     icon: '01'
   },
   {
@@ -15,13 +15,13 @@ const services = [
   {
     kicker: 'Standby power',
     title: 'Home generator projects',
-    copy: 'Krall’s current public website metadata identifies home standby generator work among the business’s residential electrical services.',
+    copy: 'Home standby generator work is available alongside Krall’s other residential electrical services.',
     icon: '03'
   }
 ];
 
 const sourceImages = {
-  hero: 'https://static.wixstatic.com/media/9ffff3_a28628f10d9146489890c9bb4d2c3374~mv2.jpeg/v1/fill/w_1170,h_548,al_c,q_85,enc_avif,quality_auto/IMG_4603.jpeg',
+  hero: 'https://static.wixstatic.com/media/9ffff3_a28628f10d9146489890c9bb4d2c3374~mv2.jpeg',
   electrician: 'https://static.wixstatic.com/media/12dfec54c92d4869b1d17ffb39e85310.jpg/v1/fill/w_1880,h_880,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Electrician.jpg'
 };
 
@@ -108,11 +108,8 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
       .hero-copy > p:not(.eyebrow) { max-width: 650px; font-size: 1.04rem; }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
       .credentials { display: flex; flex-wrap: wrap; gap: 9px 18px; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); color: #34414c; font-size: .88rem; font-weight: 760; }
-      .hero-visual { position: relative; overflow: hidden; min-height: 430px; border-radius: 12px; background: #d9dfe2; box-shadow: 0 18px 42px rgba(22,38,54,.14); }
-      .hero-visual img { width: 100%; height: 100%; min-height: 430px; object-fit: cover; }
-      .hero-note { position: absolute; left: 18px; right: 18px; bottom: 18px; padding: 16px 18px; border-left: 4px solid var(--amber); border-radius: 7px; background: rgba(22,38,54,.94); color: white; }
-      .hero-note strong { display: block; margin-bottom: 3px; font-size: .96rem; }
-      .hero-note span { color: rgba(255,255,255,.74); font-size: .84rem; }
+      .hero-visual { display: grid; place-items: center; overflow: hidden; padding: 24px; border-radius: 12px; background: #fff; box-shadow: 0 18px 42px rgba(22,38,54,.14); }
+      .hero-visual img { width: 100%; height: auto; max-height: 430px; object-fit: contain; }
 
       .quick-nav { margin-top: -24px; position: relative; z-index: 2; }
       .quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: white; box-shadow: 0 14px 34px rgba(22,38,54,.08); }
@@ -180,7 +177,8 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
         nav .button { margin-top: 4px; justify-content: center; }
         .hero-grid, .trust-grid, .details-grid, .contact-grid { grid-template-columns: 1fr; gap: 34px; }
         .hero { padding-top: 42px; }
-        .hero-visual, .hero-visual img { min-height: 380px; }
+        .hero-visual { padding: 20px; }
+        .hero-visual img { max-height: 400px; }
         .services-grid { grid-template-columns: 1fr; }
         .quick-grid { grid-template-columns: 1fr; gap: 7px; }
         .section { padding: 62px 0; }
@@ -193,7 +191,8 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
         h2 { font-size: clamp(1.3rem, 6.3vw, 1.55rem); }
         h3 { font-size: 1.08rem; }
         .hero { padding-bottom: 52px; }
-        .hero-visual, .hero-visual img { min-height: 320px; }
+        .hero-visual { padding: 14px; }
+        .hero-visual img { max-height: none; }
         .hero-actions { display: grid; }
         .hero-actions .button { width: 100%; }
         .quick-nav { margin-top: -16px; }
@@ -245,10 +244,7 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
 
           <div class="hero-visual">
             <img src={sourceImages.hero} alt="Krall Residential Electric project imagery" />
-            <div class="hero-note">
-              <strong>Knowledgeable & trustworthy residential service</strong>
-              <span>Organized around the work homeowners actually need to find quickly.</span>
-            </div>
+
           </div>
         </div>
       </section>
@@ -257,7 +253,7 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
         <div class="quick-grid">
           <a href="#services"><strong>Need something installed?</strong><span>Fans, fixtures & upgrades</span></a>
           <a href="#services"><strong>Something not working?</strong><span>Outlets, switches & repairs</span></a>
-          <a href="#quote"><strong>Ready to discuss a project?</strong><span>Request a quote safely in this demo</span></a>
+          <a href="#quote"><strong>Ready to discuss a project?</strong><span>Tell us what you need help with</span></a>
         </div>
       </div>
 
@@ -266,7 +262,7 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
           <div class="section-head">
             <p class="eyebrow">Residential services</p>
             <h2>Find the right kind of help without digging through the site.</h2>
-            <p>Krall’s existing site has useful service information. This preview brings the main customer needs forward and keeps the supporting detail easy to scan.</p>
+            <p>Whether you need an installation, repair, upgrade, or standby-power project, start with the service category that best matches your home.</p>
           </div>
 
           <div class="services-grid">
@@ -291,12 +287,12 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
           <div>
             <p class="eyebrow" style="color:#f0c65e;">Why Krall</p>
             <h2>Practical work, careful craftsmanship, and a clear way to get started.</h2>
-            <p>Krall’s current site emphasizes quality standards, long-lasting solutions, customer satisfaction, and competitive pricing. Those trust signals are easier to evaluate when they are organized together.</p>
+            <p>Krall focuses on quality work, long-lasting solutions, customer satisfaction, and competitive pricing for residential electrical projects.</p>
 
             <div class="trust-points">
-              <div class="trust-point"><b>✓</b><div><strong>Licensed and insured</strong><span>Krall publicly lists Pennsylvania contractor number PA #190943.</span></div></div>
-              <div class="trust-point"><b>✓</b><div><strong>Residential focus</strong><span>The public site is centered on homeowner installation, repair, upgrades, and problem-solving.</span></div></div>
-              <div class="trust-point"><b>✓</b><div><strong>Flexible payment methods</strong><span>The current site states that cash, Zelle, PayPal, Venmo, and major credit cards are accepted.</span></div></div>
+              <div class="trust-point"><b>✓</b><div><strong>Licensed and insured</strong><span>Pennsylvania contractor number PA #190943.</span></div></div>
+              <div class="trust-point"><b>✓</b><div><strong>Residential focus</strong><span>Installation, repair, upgrades, and electrical problem-solving for homeowners.</span></div></div>
+              <div class="trust-point"><b>✓</b><div><strong>Flexible payment methods</strong><span>Cash, Zelle, PayPal, Venmo, and major credit cards are accepted.</span></div></div>
               <div class="trust-point"><b>✓</b><div><strong>Local service</strong><span>Serving Dunmore, PA and the surrounding area from a locally presented residential business.</span></div></div>
             </div>
           </div>
@@ -313,17 +309,17 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
 
             <div class="detail-box">
               <h3>Questions or special requests?</h3>
-              <p>Krall’s current site invites homeowners to reach out with project ideas, electrical problems, questions, or special requests.</p>
+              <p>Reach out with project ideas, electrical problems, questions, or special requests. Krall is available to discuss the work and help determine the next step.</p>
             </div>
 
             <div class="detail-box">
               <h3>Quote requests</h3>
-              <p>The existing business offer is simple: email or call to set up an appointment for a quote. This preview keeps that path prominent without connecting to Krall’s real systems.</p>
+              <p>Email or call to discuss the project and set up an appointment for a quote.</p>
             </div>
 
             <div class="detail-box">
               <h3>Payment convenience</h3>
-              <p>Current public site payment options:</p>
+              <p>Accepted payment options:</p>
               <div class="payment-row">
                 <span>Cash</span><span>Zelle</span><span>PayPal</span><span>Venmo</span><span>Major credit cards</span>
               </div>
@@ -335,7 +331,7 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
             <h2>A real customer voice deserves a clearer place on the page.</h2>
             <div class="review">
               <blockquote>“Had Mr Krall replace lights in my kitchen and rewire my spotlight. He did an excellent job, was very friendly, courteous, and reasonably priced.”</blockquote>
-              <cite>Anne Beckage — current Krall website testimonial</cite>
+              <cite>Anne Beckage</cite>
             </div>
           </div>
         </div>
@@ -357,7 +353,7 @@ const canonical = 'https://previews.smallbusinessdon.com/krall-residential-elect
 
           <div class="form-card" id="quote">
             <h3>Request a Quote</h3>
-            <p>This modernization preview preserves the customer-facing intent of Krall’s current quote form. It is intentionally local-only and sends nothing to Krall.</p>
+            <p>Tell us about the residential electrical work you need help with and the best way to reach you.</p>
             <form id="demo-form">
               <label>First name<input name="first-name" autocomplete="given-name" /></label>
               <label>Last name<input name="last-name" autocomplete="family-name" /></label>
