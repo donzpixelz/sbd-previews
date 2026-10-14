@@ -1,0 +1,11 @@
+{
+  "name": "sbd-previews",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.13.0"
+  }
+}

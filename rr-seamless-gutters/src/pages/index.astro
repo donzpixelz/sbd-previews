@@ -1,0 +1,327 @@
+---
+const images = [
+  {
+    src: 'https://img1.wsimg.com/isteam/ip/c00dfd75-74be-43d7-9290-15591ce22b2b/IMG_1687.JPG/:/cr=t:16.67%25,l:0%25,w:100%25,h:66.67%25/rs=w:1240,h:620,cg:true',
+    alt: 'R&R Seamless Gutters completed gutter installation'
+  },
+  {
+    src: 'https://img1.wsimg.com/isteam/ip/c00dfd75-74be-43d7-9290-15591ce22b2b/IMG_8919.jpg/:/cr=t:16.67%25,l:0%25,w:100%25,h:66.67%25/rs=w:1240,h:620,cg:true',
+    alt: 'Completed seamless gutter project'
+  },
+  {
+    src: 'https://img1.wsimg.com/isteam/ip/c00dfd75-74be-43d7-9290-15591ce22b2b/IMG_2055.JPG/:/rs=w:1240,m',
+    alt: 'R&R Seamless Gutters project photo'
+  },
+  {
+    src: 'https://img1.wsimg.com/isteam/ip/c00dfd75-74be-43d7-9290-15591ce22b2b/IMG_4206.JPG/:/rs=w:1240,m',
+    alt: 'Installed gutter system on a home'
+  },
+  {
+    src: 'https://img1.wsimg.com/isteam/ip/c00dfd75-74be-43d7-9290-15591ce22b2b/IMG_4270.jpg/:/rs=w:1240,m',
+    alt: 'Residential gutter installation detail'
+  },
+  {
+    src: 'https://img1.wsimg.com/isteam/ip/c00dfd75-74be-43d7-9290-15591ce22b2b/IMG_1240.JPG/:/rs=w:1240,m',
+    alt: 'R&R Seamless Gutters finished project'
+  }
+];
+
+const testimonials = [
+  {
+    quote: 'Fair price, gutters are cut and installed in precise length. Definitely increased the value and curb appearance of our house. Experts in our view.',
+    name: 'Luis Acevedo',
+    date: 'April 26, 2025'
+  },
+  {
+    quote: 'I sure recommend R&R Seamless Gutters! I called them for an estimate and Francisco was at my place at the same day. Job was done one week after, and looks great! Very professional, reliable, easy payment options, and do an awesome job!',
+    name: 'Denise Tsuzukibashi',
+    date: 'April 8, 2025'
+  },
+  {
+    quote: 'The price was good, Francisco saw a problem and could have just ignored it but Francisco let me know about the problem and helped me get someone to fix it the same day. I am very pleased. It looks good!',
+    name: 'Donna Schwarz',
+    date: 'March 28, 2025'
+  }
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="description" content="R&R Seamless Gutters, LLC — quality gutter installation in the Ocala area." />
+    <title>R&R Seamless Gutters, LLC</title>
+    <style is:global>
+      :root {
+        --ink: #17211d;
+        --muted: #5d6963;
+        --cream: #f5f3ed;
+        --paper: #fff;
+        --forest: #1f4a3b;
+        --forest-dark: #15362b;
+        --gold: #d4a84f;
+        --line: #dfe4e0;
+        --shadow: 0 20px 55px rgba(23, 33, 29, .12);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--paper); }
+      a { color: inherit; }
+      img { display: block; max-width: 100%; }
+      figure { margin: 0; }
+      button { font: inherit; cursor: pointer; }
+      .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+      .eyebrow { margin: 0 0 10px; font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--forest); }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 { margin-bottom: 20px; max-width: 760px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.7rem, 6vw, 5.5rem); line-height: .96; letter-spacing: -.045em; }
+      h2 { margin-bottom: 16px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.03; letter-spacing: -.03em; }
+      h3 { margin-bottom: 8px; font-size: 1.05rem; }
+      p { line-height: 1.7; color: var(--muted); }
+      .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 0 20px; border: 1px solid var(--forest); border-radius: 999px; background: var(--forest); color: white; font-weight: 800; text-decoration: none; transition: transform .18s ease, background .18s ease; }
+      .button:hover { transform: translateY(-1px); background: var(--forest-dark); }
+      .button.secondary { background: transparent; color: var(--forest); }
+      .button.secondary:hover { background: #edf3ef; }
+      .section { padding: 88px 0; }
+
+      header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(223,228,224,.9); background: rgba(255,255,255,.94); backdrop-filter: blur(14px); }
+      .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+      .brand { text-decoration: none; font-family: Georgia, "Times New Roman", serif; font-size: 1.1rem; font-weight: 700; line-height: 1.05; }
+      .brand span { display: block; margin-top: 4px; font-family: inherit; font-size: .72rem; font-weight: 400; color: var(--muted); }
+      nav { display: flex; align-items: center; gap: 22px; }
+      nav a:not(.button) { font-size: .91rem; font-weight: 750; text-decoration: none; color: #334039; }
+
+      .hero { padding: 70px 0 42px; background: linear-gradient(180deg, #fbfcfa 0%, #fff 100%); }
+      .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 58px; }
+      .hero-copy > p:not(.eyebrow) { max-width: 610px; font-size: 1.08rem; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+      .hero-proof { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line); color: #344239; font-size: .9rem; font-weight: 750; }
+      .hero-photo { position: relative; min-height: 560px; overflow: hidden; border-radius: 30px 8px 30px 8px; box-shadow: var(--shadow); background: #d7ddd9; }
+      .hero-photo img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; }
+      .hero-card { position: absolute; left: 24px; right: 24px; bottom: 24px; padding: 18px 20px; border-radius: 18px; background: rgba(21,54,43,.94); color: white; }
+      .hero-card strong { display: block; margin-bottom: 4px; }
+      .hero-card span { color: rgba(255,255,255,.78); font-size: .9rem; }
+
+      .about-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 70px; align-items: start; }
+      .about-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 24px; }
+      .stat { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: #fbfcfa; }
+      .stat strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 1.55rem; color: var(--forest); }
+      .stat span { font-size: .88rem; color: var(--muted); }
+      .content-card { padding: 34px; border-radius: 24px; background: var(--cream); }
+      .content-card + .content-card { margin-top: 16px; }
+      .content-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.5rem; }
+
+      .gallery { background: var(--forest-dark); color: white; }
+      .gallery .eyebrow, .gallery p { color: rgba(255,255,255,.72); }
+      .gallery h2 { color: white; }
+      .photo-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 220px; gap: 14px; margin-top: 36px; }
+      .photo { overflow: hidden; border-radius: 18px; background: #29483e; }
+      .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+      .photo:hover img { transform: scale(1.025); }
+      .photo:nth-child(1) { grid-column: span 7; grid-row: span 2; }
+      .photo:nth-child(2) { grid-column: span 5; }
+      .photo:nth-child(3) { grid-column: span 5; }
+      .photo:nth-child(4), .photo:nth-child(5), .photo:nth-child(6) { grid-column: span 4; }
+
+      .reviews-head { max-width: 650px; }
+      .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+      blockquote { margin: 0; height: 100%; padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: 0 12px 30px rgba(23,33,29,.05); }
+      blockquote p { color: #35423c; font-size: .97rem; }
+      cite { display: block; margin-top: 24px; font-style: normal; font-weight: 800; }
+      cite span { display: block; margin-top: 3px; font-size: .82rem; font-weight: 500; color: var(--muted); }
+
+      .quote-section { background: var(--cream); }
+      .quote-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 60px; align-items: start; }
+      .contact-list { display: grid; gap: 12px; margin: 26px 0 0; padding: 0; list-style: none; }
+      .contact-list a { font-weight: 800; color: var(--forest); text-decoration: none; }
+      .form-card { padding: 32px; border-radius: 24px; background: white; box-shadow: var(--shadow); }
+      form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      label { display: grid; gap: 7px; font-size: .83rem; font-weight: 800; color: #39463f; }
+      label.full { grid-column: 1 / -1; }
+      input { width: 100%; min-height: 48px; padding: 0 13px; border: 1px solid #cfd7d2; border-radius: 10px; background: #fff; font: inherit; color: var(--ink); }
+      input:focus { outline: 3px solid rgba(31,74,59,.12); border-color: var(--forest); }
+      .form-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
+      .form-note { margin: 0; font-size: .8rem; color: var(--muted); }
+      .demo-message { display: none; grid-column: 1 / -1; margin: 0; padding: 13px 15px; border-radius: 10px; background: #edf5f0; color: var(--forest-dark); font-weight: 750; font-size: .88rem; }
+      .demo-message.show { display: block; }
+
+      footer { padding: 32px 0; border-top: 1px solid var(--line); }
+      .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .82rem; }
+      .preview-note { padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fafbf9; }
+
+      @media (max-width: 850px) {
+        nav a:not(.button) { display: none; }
+        .hero { padding-top: 44px; }
+        .hero-grid, .about-grid, .quote-grid { grid-template-columns: 1fr; gap: 38px; }
+        .hero-photo, .hero-photo img { min-height: 440px; }
+        .section { padding: 66px 0; }
+        .reviews-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 620px) {
+        .wrap { width: min(100% - 28px, 1120px); }
+        .nav { min-height: 68px; }
+        .nav .button { min-height: 42px; padding: 0 14px; font-size: .84rem; }
+        h1 { font-size: clamp(2.45rem, 13vw, 3.8rem); }
+        h2 { font-size: clamp(2rem, 10vw, 2.7rem); }
+        .hero-photo, .hero-photo img { min-height: 360px; }
+        .hero-card { left: 14px; right: 14px; bottom: 14px; }
+        .about-stats { grid-template-columns: 1fr; }
+        .content-card, .form-card { padding: 24px; }
+        .photo-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 170px; }
+        .photo:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+        .photo:first-child { grid-column: 1 / -1; }
+        form { grid-template-columns: 1fr; }
+        label.full, .form-actions, .demo-message { grid-column: auto; }
+        .footer-grid { align-items: flex-start; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top">R&amp;R Seamless Gutters, LLC<span>Ocala, Florida</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#reviews">Reviews</a>
+          <a class="button" href="#quote">Get a Free Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Local • Family Owned • 20+ Years of Experience</p>
+            <h1>Quality gutters for your home at affordable prices.</h1>
+            <p>R&amp;R Seamless Gutters provides high-quality gutter installation with a focus on customer satisfaction, careful work, and a professional experience from estimate to finished project.</p>
+            <div class="hero-actions">
+              <a class="button" href="tel:+13522079612">Call (352) 207-9612</a>
+              <a class="button secondary" href="#quote">Schedule a Quote</a>
+            </div>
+            <div class="hero-proof" aria-label="Business highlights">
+              <span>20+ years of experience</span>
+              <span>Seamless gutters</span>
+              <span>Leaf guards</span>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <img src="https://img1.wsimg.com/isteam/ip/c00dfd75-74be-43d7-9290-15591ce22b2b/Navarro%201.jpg/:/cr=t:31.25%25,l:0%25,w:100%25,h:37.5%25/rs=w:1240,h:620,cg:true" alt="R&R Seamless Gutters installation on an Ocala-area home" />
+            <div class="hero-card">
+              <strong>Protect one of your most valuable investments.</strong>
+              <span>Thoughtful gutter installation helps direct water away from your home, landscaping, and foundation areas.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="wrap about-grid">
+          <div>
+            <p class="eyebrow">About R&amp;R</p>
+            <h2>Built around quality work and customer satisfaction.</h2>
+            <p>R&amp;R Seamless Gutters is a local family-owned business with 20+ years of experience. Their mission is to provide high-quality gutter installation services to the community and strive to exceed expectations with every project.</p>
+            <div class="about-stats">
+              <div class="stat"><strong>20+</strong><span>years of experience</span></div>
+              <div class="stat"><strong>Free</strong><span>quote requests</span></div>
+            </div>
+          </div>
+          <div>
+            <article class="content-card">
+              <h3>Why gutters matter</h3>
+              <p>Proper guttering helps protect a home from leaks, stained walls, rotten wood, foundation problems, eroded concrete, washed-out flowerbeds and landscaping, and standing water around driveways and sidewalks.</p>
+              <p>A faulty guttering system can contribute to damage over time. R&amp;R encourages homeowners to use the right people to help protect their property.</p>
+            </article>
+            <article class="content-card">
+              <h3>Don’t forget the leaf guards</h3>
+              <p>Leaf guards can help reduce gutter clogs and water backup, but gutters still need routine cleaning. Keeping the system clear helps prevent stagnant water and debris buildup.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery" id="projects">
+        <div class="wrap">
+          <p class="eyebrow">One job at a time</p>
+          <h2>Recent work, presented with the craftsmanship front and center.</h2>
+          <p>Project imagery below is from R&amp;R Seamless Gutters’ current public website.</p>
+          <div class="photo-grid">
+            {images.map((image) => (
+              <figure class="photo"><img loading="lazy" src={image.src} alt={image.alt} /></figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reviews">
+        <div class="wrap">
+          <div class="reviews-head">
+            <p class="eyebrow">Our customers love us</p>
+            <h2>Recent customer feedback.</h2>
+            <p>These reviews are reproduced from R&amp;R’s current public website.</p>
+          </div>
+          <div class="reviews-grid">
+            {testimonials.map((review) => (
+              <blockquote>
+                <p>“{review.quote}”</p>
+                <cite>{review.name}<span>{review.date}</span></cite>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section quote-section" id="quote">
+        <div class="wrap quote-grid">
+          <div>
+            <p class="eyebrow">Contact R&amp;R</p>
+            <h2>Ready to schedule a quote?</h2>
+            <p>R&amp;R’s current site invites customers to get in touch for a free quote, questions, or special requests.</p>
+            <ul class="contact-list">
+              <li><a href="tel:+13522079612">(352) 207-9612</a></li>
+              <li><a href="tel:+13522079829">(352) 207-9829</a></li>
+              <li><a href="mailto:rrseamlessgutters@gmail.com">rrseamlessgutters@gmail.com</a></li>
+            </ul>
+            <p style="margin-top:24px;font-size:.9rem;">Regular public hours: Monday–Friday, 8:00 AM–5:00 PM; Saturday, 8:00 AM–12:00 PM.</p>
+          </div>
+
+          <div class="form-card">
+            <h3>Get a Free Quote</h3>
+            <p>This preview preserves the current quote-request experience. For safety, this demonstration form does not send information anywhere.</p>
+            <form id="demo-form">
+              <label>Name<input name="name" autocomplete="name" /></label>
+              <label>Email<input name="email" type="email" autocomplete="email" /></label>
+              <label>Phone<input name="phone" type="tel" autocomplete="tel" /></label>
+              <label class="full">Address (Street, City, Zip Code)<input name="address" autocomplete="street-address" /></label>
+              <div class="form-actions">
+                <button class="button" type="submit">Preview Quote Request</button>
+                <p class="form-note">Demo only — no submission is sent.</p>
+              </div>
+              <p class="demo-message" id="demo-message" role="status">Demo complete: no information was transmitted. On a production site, this is where the quote request would be securely delivered.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-grid">
+        <span>R&amp;R Seamless Gutters, LLC • Ocala, Florida</span>
+        <span class="preview-note">Modernization preview • not the official R&amp;R website</span>
+      </div>
+    </footer>
+
+    <script>
+      const form = document.querySelector('#demo-form');
+      const message = document.querySelector('#demo-message');
+      form?.addEventListener('submit', (event) => {
+        event.preventDefault();
+        message?.classList.add('show');
+      });
+    </script>
+  </body>
+</html>
