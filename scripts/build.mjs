@@ -14,6 +14,7 @@ function build(app) {
 
 build('lakeshore-littles');
 build('rr-seamless-gutters');
+build('krall-residential-electric');
 
 const out = resolve(root, 'dist');
 rmSync(out, { recursive: true, force: true });
@@ -21,6 +22,7 @@ mkdirSync(out, { recursive: true });
 
 cpSync(resolve(root, 'lakeshore-littles/dist/lakeshore-littles'), resolve(out, 'lakeshore-littles'), { recursive: true });
 cpSync(resolve(root, 'rr-seamless-gutters/dist/rr-seamless-gutters'), resolve(out, 'rr-seamless-gutters'), { recursive: true });
+cpSync(resolve(root, 'krall-residential-electric/dist/krall-residential-electric'), resolve(out, 'krall-residential-electric'), { recursive: true });
 
 writeFileSync(resolve(out, '_headers'), '/*\n  X-Robots-Tag: noindex, nofollow, noarchive\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Content-Type-Options: nosniff\n');
 writeFileSync(resolve(out, 'robots.txt'), 'User-agent: *\nDisallow: /\n');

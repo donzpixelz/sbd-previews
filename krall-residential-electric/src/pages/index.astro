@@ -1,0 +1,432 @@
+---
+const services = [
+  {
+    kicker: 'Install',
+    title: 'Fixtures, fans & residential upgrades',
+    copy: 'Krall’s current site highlights installation work ranging from ceiling fans to updated light fixtures, with professional attention for both straightforward and more involved residential projects.',
+    icon: '01'
+  },
+  {
+    kicker: 'Repair',
+    title: 'Outlets, switches & troubleshooting',
+    copy: 'For outlets, switches, and other electrical problems that stop working the way they should, Krall offers residential repair help and answers questions before work begins.',
+    icon: '02'
+  },
+  {
+    kicker: 'Standby power',
+    title: 'Home generator projects',
+    copy: 'Krall’s current public website metadata identifies home standby generator work among the business’s residential electrical services.',
+    icon: '03'
+  }
+];
+
+const sourceImages = {
+  hero: 'https://static.wixstatic.com/media/9ffff3_a28628f10d9146489890c9bb4d2c3374~mv2.jpeg/v1/fill/w_1170,h_548,al_c,q_85,enc_avif,quality_auto/IMG_4603.jpeg',
+  electrician: 'https://static.wixstatic.com/media/12dfec54c92d4869b1d17ffb39e85310.jpg/v1/fill/w_1880,h_880,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Electrician.jpg'
+};
+
+const canonical = 'https://previews.smallbusinessdon.com/krall-residential-electric/';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="description" content="Krall Residential Electric LLC — licensed and insured residential electrician serving Dunmore, PA and the surrounding area." />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Krall Residential Electric LLC — Modernization Preview" />
+    <meta property="og:description" content="A clearer, easier-to-use modernization preview for Krall Residential Electric LLC in Dunmore, Pennsylvania." />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={sourceImages.hero} />
+    <meta property="og:image:alt" content="Krall Residential Electric project imagery" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Krall Residential Electric LLC — Modernization Preview" />
+    <meta name="twitter:description" content="A clearer modernization preview for Krall Residential Electric LLC in Dunmore, Pennsylvania." />
+    <meta name="twitter:image" content={sourceImages.hero} />
+    <title>Krall Residential Electric LLC</title>
+
+    <style is:global>
+      :root {
+        --ink: #17202a;
+        --ink-soft: #46515d;
+        --navy: #162636;
+        --navy-2: #21384c;
+        --amber: #d8a22b;
+        --amber-soft: #f4e5b9;
+        --paper: #ffffff;
+        --mist: #f4f6f7;
+        --line: #dfe4e8;
+        --max: 1120px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--paper); }
+      body.menu-open { overflow: hidden; }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; }
+      button, input, textarea { font: inherit; }
+      button { cursor: pointer; }
+
+      .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+      .eyebrow { margin: 0 0 8px; color: #8c691e; font-size: .76rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 { margin-bottom: 18px; max-width: 690px; font-size: clamp(2rem, 3.3vw, 2.4rem); line-height: 1.08; letter-spacing: -.025em; }
+      h2 { margin-bottom: 14px; font-size: clamp(1.45rem, 2.2vw, 1.8rem); line-height: 1.18; letter-spacing: -.015em; }
+      h3 { margin-bottom: 8px; font-size: 1.18rem; line-height: 1.28; }
+      p { color: var(--ink-soft); line-height: 1.68; }
+      .section { padding: 76px 0; }
+      .section-head { max-width: 700px; margin-bottom: 30px; }
+
+      .button { display: inline-flex; min-height: 46px; padding: 0 18px; align-items: center; justify-content: center; border: 1px solid var(--navy); border-radius: 8px; background: var(--navy); color: #fff; font-size: .92rem; font-weight: 800; text-decoration: none; }
+      .button:hover { background: var(--navy-2); }
+      .button.alt { border-color: #b98a21; background: var(--amber); color: #17202a; }
+      .button.ghost { background: transparent; color: var(--navy); }
+      .button.ghost:hover { background: #eef2f4; }
+
+      header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid rgba(223,228,232,.92); background: rgba(255,255,255,.95); backdrop-filter: blur(12px); }
+      .nav-bar { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+      .brand { text-decoration: none; font-weight: 900; line-height: 1.03; }
+      .brand strong { display: block; font-size: 1rem; }
+      .brand span { display: block; margin-top: 4px; color: var(--ink-soft); font-size: .72rem; font-weight: 650; letter-spacing: .04em; }
+      nav { display: flex; align-items: center; gap: 21px; }
+      nav a:not(.button) { color: #34414c; font-size: .9rem; font-weight: 760; text-decoration: none; }
+      .menu-toggle { display: none; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--navy); align-items: center; justify-content: center; flex-direction: column; }
+      .menu-toggle span, .menu-toggle::before, .menu-toggle::after { content: ""; width: 20px; height: 2px; border-radius: 2px; background: currentColor; transition: .18s ease; }
+      .menu-toggle span { margin: 4px 0; }
+      .menu-toggle[aria-expanded="true"] span { opacity: 0; }
+      .menu-toggle[aria-expanded="true"]::before { transform: translateY(6px) rotate(45deg); }
+      .menu-toggle[aria-expanded="true"]::after { transform: translateY(-6px) rotate(-45deg); }
+
+      .hero { padding: 56px 0 66px; background: linear-gradient(110deg, #f7f8f8 0%, #fff 55%, #f1f4f5 100%); }
+      .hero-grid { display: grid; grid-template-columns: 1fr .95fr; gap: 52px; align-items: center; }
+      .hero-copy > p:not(.eyebrow) { max-width: 650px; font-size: 1.04rem; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+      .credentials { display: flex; flex-wrap: wrap; gap: 9px 18px; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); color: #34414c; font-size: .88rem; font-weight: 760; }
+      .hero-visual { position: relative; overflow: hidden; min-height: 430px; border-radius: 12px; background: #d9dfe2; box-shadow: 0 18px 42px rgba(22,38,54,.14); }
+      .hero-visual img { width: 100%; height: 100%; min-height: 430px; object-fit: cover; }
+      .hero-note { position: absolute; left: 18px; right: 18px; bottom: 18px; padding: 16px 18px; border-left: 4px solid var(--amber); border-radius: 7px; background: rgba(22,38,54,.94); color: white; }
+      .hero-note strong { display: block; margin-bottom: 3px; font-size: .96rem; }
+      .hero-note span { color: rgba(255,255,255,.74); font-size: .84rem; }
+
+      .quick-nav { margin-top: -24px; position: relative; z-index: 2; }
+      .quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: white; box-shadow: 0 14px 34px rgba(22,38,54,.08); }
+      .quick-grid a { padding: 14px 16px; border-radius: 8px; background: var(--mist); text-decoration: none; }
+      .quick-grid strong { display: block; margin-bottom: 3px; font-size: .9rem; }
+      .quick-grid span { color: var(--ink-soft); font-size: .78rem; }
+
+      .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .service-card { padding: 26px; border: 1px solid var(--line); border-radius: 10px; background: white; }
+      .service-card .num { display: inline-grid; width: 34px; height: 34px; place-items: center; margin-bottom: 19px; border-radius: 7px; background: var(--amber-soft); color: #694d0e; font-size: .76rem; font-weight: 900; }
+      .service-card .kicker { margin-bottom: 4px; color: #7a5c19; font-size: .74rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+      .service-card p { margin-bottom: 0; font-size: .93rem; }
+
+      .trust { background: var(--navy); color: white; }
+      .trust h2, .trust h3 { color: white; }
+      .trust p { color: rgba(255,255,255,.74); }
+      .trust-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 52px; align-items: center; }
+      .trust-image { overflow: hidden; min-height: 360px; border-radius: 10px; background: #304758; }
+      .trust-image img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; }
+      .trust-points { display: grid; gap: 13px; margin-top: 24px; }
+      .trust-point { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; }
+      .trust-point b { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 50%; background: var(--amber); color: var(--navy); font-size: .76rem; }
+      .trust-point strong { display: block; margin-bottom: 2px; }
+      .trust-point span { color: rgba(255,255,255,.7); font-size: .88rem; line-height: 1.5; }
+      .details-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 54px; align-items: start; }
+      .details-copy { display: grid; gap: 14px; }
+      .detail-box { padding: 22px; border-radius: 9px; background: var(--mist); }
+      .detail-box p { margin-bottom: 0; font-size: .92rem; }
+      .payment-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+      .payment-row span { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; background: white; color: #43505b; font-size: .76rem; font-weight: 760; }
+
+      .review { padding: 28px; border-left: 4px solid var(--amber); border-radius: 8px; background: #fff9e9; }
+      .review blockquote { margin: 0; color: #34414c; line-height: 1.72; }
+      .review cite { display: block; margin-top: 17px; color: var(--navy); font-style: normal; font-weight: 850; }
+
+      .contact { background: #eef1f3; }
+      .contact-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 48px; align-items: start; }
+      .contact-list { display: grid; gap: 10px; padding: 0; margin: 24px 0 0; list-style: none; }
+      .contact-list a { color: var(--navy); font-weight: 850; text-decoration: none; }
+      .license { display: inline-block; margin-top: 19px; padding: 8px 11px; border-radius: 6px; background: #dfe5e8; color: #3a4650; font-size: .8rem; font-weight: 800; }
+
+      .form-card { padding: 28px; border-radius: 11px; background: white; box-shadow: 0 14px 34px rgba(22,38,54,.09); }
+      .form-card > p { font-size: .88rem; }
+      form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      label { display: grid; gap: 6px; color: #394650; font-size: .8rem; font-weight: 800; }
+      label.full { grid-column: 1 / -1; }
+      input, textarea { width: 100%; padding: 11px 12px; border: 1px solid #cfd7dc; border-radius: 7px; background: white; color: var(--ink); }
+      textarea { min-height: 112px; resize: vertical; }
+      input:focus, textarea:focus { outline: 3px solid rgba(216,162,43,.18); border-color: #b98a21; }
+      .form-footer { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+      .form-note { margin: 0; font-size: .78rem; color: var(--ink-soft); }
+      .demo-message { display: none; grid-column: 1 / -1; margin: 0; padding: 12px 13px; border-radius: 7px; background: #ecf5ee; color: #275535; font-size: .84rem; font-weight: 760; }
+      .demo-message.show { display: block; }
+
+      footer { padding: 28px 0; border-top: 1px solid var(--line); }
+      .footer-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; color: #64707a; font-size: .8rem; }
+      .preview-tag { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fafafa; }
+
+      @media (max-width: 860px) {
+        .nav-bar { position: relative; }
+        .menu-toggle { display: inline-flex; flex: 0 0 auto; }
+        nav { display: none; position: absolute; top: calc(100% + 1px); right: 0; width: min(290px, calc(100vw - 28px)); padding: 12px; flex-direction: column; align-items: stretch; gap: 4px; border: 1px solid var(--line); border-radius: 0 0 10px 10px; background: white; box-shadow: 0 16px 35px rgba(22,38,54,.15); }
+        nav[data-open="true"] { display: flex; }
+        nav a:not(.button), nav .button { display: flex; min-height: 44px; width: 100%; padding: 0 12px; align-items: center; justify-content: flex-start; border-radius: 7px; }
+        nav .button { margin-top: 4px; justify-content: center; }
+        .hero-grid, .trust-grid, .details-grid, .contact-grid { grid-template-columns: 1fr; gap: 34px; }
+        .hero { padding-top: 42px; }
+        .hero-visual, .hero-visual img { min-height: 380px; }
+        .services-grid { grid-template-columns: 1fr; }
+        .quick-grid { grid-template-columns: 1fr; gap: 7px; }
+        .section { padding: 62px 0; }
+      }
+
+      @media (max-width: 620px) {
+        .wrap { width: min(var(--max), calc(100% - 28px)); }
+        .nav-bar { min-height: 68px; }
+        h1 { font-size: clamp(1.75rem, 8vw, 2.05rem); }
+        h2 { font-size: clamp(1.3rem, 6.3vw, 1.55rem); }
+        h3 { font-size: 1.08rem; }
+        .hero { padding-bottom: 52px; }
+        .hero-visual, .hero-visual img { min-height: 320px; }
+        .hero-actions { display: grid; }
+        .hero-actions .button { width: 100%; }
+        .quick-nav { margin-top: -16px; }
+        .section { padding: 52px 0; }
+        .service-card, .form-card { padding: 22px; }
+        form { grid-template-columns: 1fr; }
+        label.full, .form-footer, .demo-message { grid-column: auto; }
+        .footer-row { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav-bar">
+        <a class="brand" href="#top">
+          <strong>Krall Residential Electric LLC</strong>
+          <span>DUNMORE, PENNSYLVANIA</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu"><span></span></button>
+
+        <nav id="primary-nav" aria-label="Primary navigation" data-open="false">
+          <a href="#services">Services</a>
+          <a href="#why-krall">Why Krall</a>
+          <a href="#review">Review</a>
+          <a href="#contact">Contact</a>
+          <a class="button alt" href="#quote">Get a Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Residential electrical work • Dunmore & surrounding area</p>
+            <h1>Clear residential electrical help, from everyday repairs to home upgrades.</h1>
+            <p>Krall Residential Electric LLC is a licensed and insured residential electrical contractor serving Dunmore, Pennsylvania and the surrounding area. No job too small.</p>
+            <div class="hero-actions">
+              <a class="button alt" href="tel:+15702809919">Call (570) 280-9919</a>
+              <a class="button ghost" href="#services">Explore Services</a>
+            </div>
+            <div class="credentials" aria-label="Business credentials">
+              <span>Licensed & insured</span>
+              <span>PA #190943</span>
+              <span>Fair-price quote requests</span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <img src={sourceImages.hero} alt="Krall Residential Electric project imagery" />
+            <div class="hero-note">
+              <strong>Knowledgeable & trustworthy residential service</strong>
+              <span>Organized around the work homeowners actually need to find quickly.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap quick-nav" aria-label="Quick service navigation">
+        <div class="quick-grid">
+          <a href="#services"><strong>Need something installed?</strong><span>Fans, fixtures & upgrades</span></a>
+          <a href="#services"><strong>Something not working?</strong><span>Outlets, switches & repairs</span></a>
+          <a href="#quote"><strong>Ready to discuss a project?</strong><span>Request a quote safely in this demo</span></a>
+        </div>
+      </div>
+
+      <section class="section" id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Residential services</p>
+            <h2>Find the right kind of help without digging through the site.</h2>
+            <p>Krall’s existing site has useful service information. This preview brings the main customer needs forward and keeps the supporting detail easy to scan.</p>
+          </div>
+
+          <div class="services-grid">
+            {services.map((service) => (
+              <article class="service-card">
+                <span class="num">{service.icon}</span>
+                <p class="kicker">{service.kicker}</p>
+                <h3>{service.title}</h3>
+                <p>{service.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section trust" id="why-krall">
+        <div class="wrap trust-grid">
+          <div class="trust-image">
+            <img loading="lazy" src={sourceImages.electrician} alt="Electrician at work" />
+          </div>
+
+          <div>
+            <p class="eyebrow" style="color:#f0c65e;">Why Krall</p>
+            <h2>Practical work, careful craftsmanship, and a clear way to get started.</h2>
+            <p>Krall’s current site emphasizes quality standards, long-lasting solutions, customer satisfaction, and competitive pricing. Those trust signals are easier to evaluate when they are organized together.</p>
+
+            <div class="trust-points">
+              <div class="trust-point"><b>✓</b><div><strong>Licensed and insured</strong><span>Krall publicly lists Pennsylvania contractor number PA #190943.</span></div></div>
+              <div class="trust-point"><b>✓</b><div><strong>Residential focus</strong><span>The public site is centered on homeowner installation, repair, upgrades, and problem-solving.</span></div></div>
+              <div class="trust-point"><b>✓</b><div><strong>Flexible payment methods</strong><span>The current site states that cash, Zelle, PayPal, Venmo, and major credit cards are accepted.</span></div></div>
+              <div class="trust-point"><b>✓</b><div><strong>Local service</strong><span>Serving Dunmore, PA and the surrounding area from a locally presented residential business.</span></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="review">
+        <div class="wrap details-grid">
+          <div class="details-copy">
+            <div>
+              <p class="eyebrow">Straightforward information</p>
+              <h2>The details customers look for, kept together.</h2>
+            </div>
+
+            <div class="detail-box">
+              <h3>Questions or special requests?</h3>
+              <p>Krall’s current site invites homeowners to reach out with project ideas, electrical problems, questions, or special requests.</p>
+            </div>
+
+            <div class="detail-box">
+              <h3>Quote requests</h3>
+              <p>The existing business offer is simple: email or call to set up an appointment for a quote. This preview keeps that path prominent without connecting to Krall’s real systems.</p>
+            </div>
+
+            <div class="detail-box">
+              <h3>Payment convenience</h3>
+              <p>Current public site payment options:</p>
+              <div class="payment-row">
+                <span>Cash</span><span>Zelle</span><span>PayPal</span><span>Venmo</span><span>Major credit cards</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="eyebrow">Public testimonial</p>
+            <h2>A real customer voice deserves a clearer place on the page.</h2>
+            <div class="review">
+              <blockquote>“Had Mr Krall replace lights in my kitchen and rewire my spotlight. He did an excellent job, was very friendly, courteous, and reasonably priced.”</blockquote>
+              <cite>Anne Beckage — current Krall website testimonial</cite>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="wrap contact-grid">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Make the next step obvious.</h2>
+            <p>For residential electrical work in Dunmore and the surrounding area, contact Krall by phone or email to discuss the project.</p>
+            <ul class="contact-list">
+              <li><a href="tel:+15702809919">(570) 280-9919</a></li>
+              <li><a href="mailto:krallelectric@outlook.com">krallelectric@outlook.com</a></li>
+              <li>523 South Blakely Street, Dunmore, PA 18512</li>
+            </ul>
+            <span class="license">PA #190943</span>
+          </div>
+
+          <div class="form-card" id="quote">
+            <h3>Request a Quote</h3>
+            <p>This modernization preview preserves the customer-facing intent of Krall’s current quote form. It is intentionally local-only and sends nothing to Krall.</p>
+            <form id="demo-form">
+              <label>First name<input name="first-name" autocomplete="given-name" /></label>
+              <label>Last name<input name="last-name" autocomplete="family-name" /></label>
+              <label>Email<input name="email" type="email" autocomplete="email" /></label>
+              <label>Phone<input name="phone" type="tel" autocomplete="tel" /></label>
+              <label class="full">What can we help with?<textarea name="comments"></textarea></label>
+              <div class="form-footer">
+                <button class="button alt" type="submit">Preview Quote Request</button>
+                <p class="form-note">Demo only — no information is transmitted.</p>
+              </div>
+              <p class="demo-message" id="demo-message" role="status">Demo complete. No information was sent. A production version could connect this form only after Krall approves the destination and workflow.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap footer-row">
+        <span>Krall Residential Electric LLC • Dunmore, Pennsylvania</span>
+        <span class="preview-tag">Modernization preview • not the official Krall website</span>
+      </div>
+    </footer>
+
+    <script>
+      const form = document.querySelector('#demo-form');
+      const message = document.querySelector('#demo-message');
+
+      form?.addEventListener('submit', (event) => {
+        event.preventDefault();
+        message?.classList.add('show');
+      });
+
+      const menuButton = document.querySelector('.menu-toggle');
+      const primaryNav = document.querySelector('#primary-nav');
+
+      const setMenuOpen = (open) => {
+        if (!(menuButton instanceof HTMLButtonElement) || !(primaryNav instanceof HTMLElement)) return;
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+        primaryNav.dataset.open = String(open);
+        document.body.classList.toggle('menu-open', open);
+      };
+
+      menuButton?.addEventListener('click', () => {
+        setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+      });
+
+      primaryNav?.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setMenuOpen(false));
+      });
+
+      document.addEventListener('click', (event) => {
+        if (menuButton?.getAttribute('aria-expanded') !== 'true') return;
+        const target = event.target;
+        if (!(target instanceof Node)) return;
+        if (menuButton?.contains(target) || primaryNav?.contains(target)) return;
+        setMenuOpen(false);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape' || menuButton?.getAttribute('aria-expanded') !== 'true') return;
+        setMenuOpen(false);
+        if (menuButton instanceof HTMLButtonElement) menuButton.focus();
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 860) setMenuOpen(false);
+      });
+    </script>
+  </body>
+</html>
